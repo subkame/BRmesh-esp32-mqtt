@@ -5,13 +5,14 @@ An ESP32 MQTT Home Assistant implementation of the BRmesh app to control lights.
 
 Automatically adds lights and makes them available via an MQTT broker.
 
+**Added support for the LinkJapan eLamp2, which is sold in Japan.**
 
 ## Acknowledgements
 
 The great existing projects that this work is based off of:
-
  - [BRMesh_homeassistant by @millskyle](https://github.com/millskyle/BRMesh_homeassistant)
  - [brMeshMQTT by @ArcadeMachinist](https://github.com/ArcadeMachinist/brMeshMQTT)
+ - [BRmesh-esp32-mqtt by @dsclee1](https://github.com/dsclee1/BRmesh-esp32-mqtt)
 
 ## Installation
 
@@ -28,6 +29,10 @@ Set your WiFi details and MQTT Broker in main.cpp before flashing.
 #define WIFI_SSID "YOUR_SSID"
 //Your Wifi Password
 #define WIFI_PASS "YOUR_WIFI_PASS"
+// YOUR MQTT BROKER USER
+#define MQTT_BROKER_USER "YOUR_MQTT_BROKER_USER"
+// YOUR MQTT BROKER Password
+#define MQTT_BROKER_PASS "YOUR_MQTT_BROKER_PASS"
 ```
 
 
@@ -48,9 +53,6 @@ You're good to go!
 
 
 ## Bugs
-
-I'm unable to test the "ColorTemperature" code properly as it's not a function that my lights have.
-
 Adding lights has occasionally been flakey. I've tested this code on a group of 7 lights, for which it worked fine, but you'll have to see how you get on. Some of the polling times for the BLE Advertising frames might need adjustment.
 
 ## Contributing
